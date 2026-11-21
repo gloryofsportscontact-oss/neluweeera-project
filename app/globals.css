@@ -1,26 +1,75 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-ivory: #F5F3EE;
+  --color-sand: #E5DED2;
+  --color-sand-light: #FAF8F5;
+  --color-teal-brand: #41D2CB;
+  --color-teal-dark: #2AA8A1;
+  --color-teal-light: #76E0DA;
+  --color-slate-brand: #919297;
+  --color-slate-dark: #68696E;
+  --color-bronze: #A68B68;
+  --color-bronze-dark: #8C7250;
+  --color-bronze-light: #C2AB8D;
+  --color-charcoal: #292824;
+  --color-charcoal-light: #383632;
+  --color-deep-black: #171714;
+  --color-warm-grey: #817C72;
+  --color-warm-grey-light: #B8B3A8;
+
+  --font-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-dm-sans), "DM Sans", system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  * {
+    border-color: rgba(41, 40, 36, 0.1);
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  html {
+    scroll-behavior: smooth;
+    background-color: #F5F3EE;
+    color: #171714;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #F5F3EE;
+    color: #171714;
+    font-family: var(--font-dm-sans), sans-serif;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #41D2CB;
+    color: #171714;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom architectural utility classes */
+.font-serif {
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
+.font-sans {
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+}
+
+.text-teal-brand {
+  color: #41D2CB;
+}
+
+.text-slate-brand {
+  color: #919297;
+}
+
+.bg-teal-brand {
+  background-color: #41D2CB;
+}
+
+.border-teal-brand {
+  border-color: #41D2CB;
 }
